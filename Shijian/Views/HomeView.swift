@@ -12,7 +12,18 @@ struct HomeView: View {
         ZStack {
             BackgroundView()
             
-            Text("Home")
+            VStack {
+                Spacer()
+                
+                Text("bip")
+                
+                GIFImage(name: "angry.gif")
+                    .frame(width:200,height:200)
+                
+                Text("Yeet")
+                
+                Spacer()
+            }
         }
     }
 }

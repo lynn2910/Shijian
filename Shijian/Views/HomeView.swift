@@ -15,12 +15,34 @@ struct HomeView: View {
             VStack {
                 Spacer()
                 
-                Text("bip")
+                Text("Tu as passé...")
+                Text("5 h et 41 min")
+                    .fontWeight(.black).font(.title)
+                Text("sur ton téléphone aujourd'hui")
                 
-                GIFImage(name: "angry.gif")
-                    .frame(width:200,height:200)
-                
-                Text("Yeet")
+                //
+                // Rapport
+                //
+                HStack(spacing: 20) {
+                    VStack {
+                        Text("Par rapport à hier").fontWeight(.medium)
+                        Text("+ 3h 21m").bold()
+                    }.padding(.all)
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .frame(width: 3, height: 80)
+                    VStack {
+                        Text("Temps restant").fontWeight(.medium)
+                        Text("19m").bold()
+                    }.padding(.all)
+                }
+                    .frame(height:80)
+                    .background {
+                        Rectangle()
+                            .foregroundColor(.white.opacity(0.7))
+                            .border(.white, width: 2)
+                            .cornerRadius(10)
+                    }
                 
                 Spacer()
             }

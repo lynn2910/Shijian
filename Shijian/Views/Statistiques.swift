@@ -13,11 +13,31 @@ struct Statistiques: View {
         UITabBar.appearance().backgroundColor = .cream;
     }
     
+    
+    @State private var selection = 0;
+    
+    
     var body: some View {
         ZStack {
             BackgroundView()
             
-            Text("Statistiques")
+            VStack {
+                Picker("Options", selection: $selection) {
+                    Text("Série").tag(0)
+                    Text("Statistiques").tag(1)
+                }.pickerStyle(.segmented)
+                    .padding(.horizontal)
+                
+                Spacer()
+                
+                if selection == 0 {
+                    SeriesStats()
+                } else {
+                    AppStats()
+                }
+                
+                Spacer()
+            }
         }
     }
 }

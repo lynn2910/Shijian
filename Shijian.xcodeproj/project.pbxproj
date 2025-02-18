@@ -17,6 +17,8 @@
 		62F71A112D6470EA0032F6B7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F71A102D6470EA0032F6B7 /* Settings.swift */; };
 		62F71A172D6475370032F6B7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 62F71A162D6475370032F6B7 /* Localizable.xcstrings */; };
 		62F71A192D6478D80032F6B7 /* GIFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F71A182D6478D80032F6B7 /* GIFImage.swift */; };
+		62F71A1C2D647EE40032F6B7 /* SeriesStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F71A1B2D647EE40032F6B7 /* SeriesStats.swift */; };
+		62F71A1E2D647EF20032F6B7 /* AppStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F71A1D2D647EF20032F6B7 /* AppStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		62F71A102D6470EA0032F6B7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		62F71A162D6475370032F6B7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		62F71A182D6478D80032F6B7 /* GIFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFImage.swift; sourceTree = "<group>"; };
+		62F71A1B2D647EE40032F6B7 /* SeriesStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesStats.swift; sourceTree = "<group>"; };
+		62F71A1D2D647EF20032F6B7 /* AppStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		62F71A062D646C480032F6B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62F71A1A2D647ED30032F6B7 /* StatViews */,
 				62F71A072D646C5E0032F6B7 /* HomeView.swift */,
 				62F71A0A2D646D340032F6B7 /* BackgroundView.swift */,
 				62F71A0E2D6470D90032F6B7 /* Statistiques.swift */,
@@ -99,6 +104,15 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		62F71A1A2D647ED30032F6B7 /* StatViews */ = {
+			isa = PBXGroup;
+			children = (
+				62F71A1B2D647EE40032F6B7 /* SeriesStats.swift */,
+				62F71A1D2D647EF20032F6B7 /* AppStats.swift */,
+			);
+			path = StatViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,9 +189,11 @@
 				62F71A112D6470EA0032F6B7 /* Settings.swift in Sources */,
 				62F71A082D646C5E0032F6B7 /* HomeView.swift in Sources */,
 				62F71A192D6478D80032F6B7 /* GIFImage.swift in Sources */,
+				62F71A1E2D647EF20032F6B7 /* AppStats.swift in Sources */,
 				62F71A0F2D6470D90032F6B7 /* Statistiques.swift in Sources */,
 				62F719FB2D646B1B0032F6B7 /* ContentView.swift in Sources */,
 				62F71A0B2D646D340032F6B7 /* BackgroundView.swift in Sources */,
+				62F71A1C2D647EE40032F6B7 /* SeriesStats.swift in Sources */,
 				62F719F92D646B1B0032F6B7 /* ShijianApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

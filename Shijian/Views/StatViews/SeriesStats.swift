@@ -10,8 +10,8 @@ import SwiftUI
 struct SeriesStats: View {
     var body: some View {
         VStack {
+            //Spacer().frame(height: 50)
             HStack {
-                Spacer()
                 VStack(alignment: .leading) {
                     Text("591")
                         .font(.system(size: 54, weight: .bold, design: .default))
@@ -22,10 +22,26 @@ struct SeriesStats: View {
                 Spacer()
                 
                 Image("flame")
-                Spacer()
-            }
+            }.padding()
+        
+            Spacer()
             
-            Text("Calendrier")
+            HStack {
+                Text("Calendrier des séries")
+                    .bold()
+                    .font(.title2)
+                    .multilineTextAlignment(.leading)
+                
+                Spacer()
+            }.padding(.horizontal)
+            
+            Spacer().frame(height: 10)
+            
+            SeriesCalendar().padding(.horizontal)
+            
+            Text("Votre série sera réinitialisée si vous dépassez une limite quotidienne")
+                .font(.caption)
+                .padding()
         }
     }
 }
@@ -33,6 +49,6 @@ struct SeriesStats: View {
 #Preview {
     ZStack {
         BackgroundView()
-        SeriesStats()
+        Statistiques()
     }
 }

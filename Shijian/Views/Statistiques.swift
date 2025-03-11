@@ -31,7 +31,7 @@ struct Statistiques: View {
                 Spacer()
                 
                 if selection == 0 {
-                    SeriesStats()
+                    SeriesStats().padding(2)
                 } else {
                     AppStats()
                 }

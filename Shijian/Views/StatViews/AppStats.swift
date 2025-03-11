@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AppStats: View {
+    @EnvironmentObject var appsVM: AppsViewModel
+    
     var body: some View {
         Text("Statistiques")
     }
@@ -15,4 +17,5 @@ struct AppStats: View {
 
 #Preview {
     AppStats()
+        .environmentObject(AppsViewModel())
 }

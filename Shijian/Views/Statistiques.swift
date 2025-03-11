@@ -44,4 +44,5 @@ struct Statistiques: View {
 
 #Preview {
     Statistiques()
+        .environmentObject(AppsViewModel())
 }

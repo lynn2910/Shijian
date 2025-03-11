@@ -17,6 +17,7 @@ struct ShijianApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(AppsViewModel())
         }
     }
 }

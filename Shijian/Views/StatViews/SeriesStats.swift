@@ -10,7 +10,6 @@ import SwiftUI
 struct SeriesStats: View {
     var body: some View {
         VStack {
-            //Spacer().frame(height: 50)
             HStack {
                 VStack(alignment: .leading) {
                     Text("591")

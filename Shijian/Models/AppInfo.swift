@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Charts
 
 enum AppCategory: String, CaseIterable {
     case social = "Réseaux sociaux"
@@ -48,4 +49,24 @@ struct AppInfo: Identifiable {
             ]
         )
     ]
+}
+
+struct AppUsageData: Identifiable {
+    let id = UUID()
+    let app: AppInfo
+    let time: TimeInterval
+}
+
+extension AppInfo {
+    func usageData() -> [AppUsageData] {
+        return times.map { time in
+            AppUsageData(app: self, time: TimeInterval(time.time))
+        }
+    }
+}
+
+extension Array where Element == AppInfo {
+    func allUsageData() -> [AppUsageData] {
+        return flatMap { $0.usageData() }
+    }
 }

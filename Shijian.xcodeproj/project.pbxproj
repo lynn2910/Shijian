@@ -11,6 +11,9 @@
 		6222FBFA2D802B7200D5DBF3 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222FBF92D802B7200D5DBF3 /* AppsViewModel.swift */; };
 		6222FBFE2D802BC300D5DBF3 /* AppTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222FBFD2D802BC300D5DBF3 /* AppTime.swift */; };
 		6222FC002D802F7F00D5DBF3 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6222FBFF2D802F7F00D5DBF3 /* AppInfo.swift */; };
+		6279C6DE2D8ABC670072AAEF /* AppStatsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279C6DD2D8ABC670072AAEF /* AppStatsCard.swift */; };
+		6279C6E02D8AC2EB0072AAEF /* AppStatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279C6DF2D8AC2EB0072AAEF /* AppStatData.swift */; };
+		6279C6E22D8ACCF40072AAEF /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6279C6E12D8ACCF40072AAEF /* AppDetailView.swift */; };
 		62F719F92D646B1B0032F6B7 /* ShijianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F719F82D646B1B0032F6B7 /* ShijianApp.swift */; };
 		62F719FB2D646B1B0032F6B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F719FA2D646B1B0032F6B7 /* ContentView.swift */; };
 		62F719FD2D646B1D0032F6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62F719FC2D646B1D0032F6B7 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		6222FBF92D802B7200D5DBF3 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		6222FBFD2D802BC300D5DBF3 /* AppTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTime.swift; sourceTree = "<group>"; };
 		6222FBFF2D802F7F00D5DBF3 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		6279C6DD2D8ABC670072AAEF /* AppStatsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatsCard.swift; sourceTree = "<group>"; };
+		6279C6DF2D8AC2EB0072AAEF /* AppStatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatData.swift; sourceTree = "<group>"; };
+		6279C6E12D8ACCF40072AAEF /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 		62F719F52D646B1B0032F6B7 /* Shijian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shijian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F719F82D646B1B0032F6B7 /* ShijianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShijianApp.swift; sourceTree = "<group>"; };
 		62F719FA2D646B1B0032F6B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			children = (
 				6222FBFD2D802BC300D5DBF3 /* AppTime.swift */,
 				6222FBFF2D802F7F00D5DBF3 /* AppInfo.swift */,
+				6279C6DF2D8AC2EB0072AAEF /* AppStatData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +138,8 @@
 				62F71A1B2D647EE40032F6B7 /* SeriesStats.swift */,
 				62F71A1D2D647EF20032F6B7 /* AppStats.swift */,
 				6222FBF52D80189C00D5DBF3 /* SeriesCalendar.swift */,
+				6279C6DD2D8ABC670072AAEF /* AppStatsCard.swift */,
+				6279C6E12D8ACCF40072AAEF /* AppDetailView.swift */,
 			);
 			path = StatViews;
 			sourceTree = "<group>";
@@ -209,7 +218,9 @@
 				6222FBF62D80189C00D5DBF3 /* SeriesCalendar.swift in Sources */,
 				62F71A112D6470EA0032F6B7 /* Settings.swift in Sources */,
 				62F71A082D646C5E0032F6B7 /* HomeView.swift in Sources */,
+				6279C6DE2D8ABC670072AAEF /* AppStatsCard.swift in Sources */,
 				62F71A192D6478D80032F6B7 /* GIFImage.swift in Sources */,
+				6279C6E02D8AC2EB0072AAEF /* AppStatData.swift in Sources */,
 				62F71A1E2D647EF20032F6B7 /* AppStats.swift in Sources */,
 				62F71A0F2D6470D90032F6B7 /* Statistiques.swift in Sources */,
 				62F719FB2D646B1B0032F6B7 /* ContentView.swift in Sources */,
@@ -217,6 +228,7 @@
 				6222FBFA2D802B7200D5DBF3 /* AppsViewModel.swift in Sources */,
 				62F71A0B2D646D340032F6B7 /* BackgroundView.swift in Sources */,
 				62F71A1C2D647EE40032F6B7 /* SeriesStats.swift in Sources */,
+				6279C6E22D8ACCF40072AAEF /* AppDetailView.swift in Sources */,
 				6222FC002D802F7F00D5DBF3 /* AppInfo.swift in Sources */,
 				62F719F92D646B1B0032F6B7 /* ShijianApp.swift in Sources */,
 			);

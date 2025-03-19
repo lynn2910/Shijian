@@ -17,4 +17,10 @@ class AppsViewModel: ObservableObject {
     func getApps(){
         self.apps.append(contentsOf: AppInfo.testData)
     }
+    
+    func getAppByName(name: String) -> AppInfo? {
+        self.apps.first(where: { a in
+            a.name == name
+        })
+    }
 }

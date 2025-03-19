@@ -4,8 +4,15 @@
     "" : {
 
     },
-    "%lld" : {
-
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
     },
     "+ 3h 21m" : {
 
@@ -22,7 +29,13 @@
     "Accueil" : {
 
     },
+    "Application" : {
+
+    },
     "Calendrier des séries" : {
+
+    },
+    "Date" : {
 
     },
     "Done" : {
@@ -43,6 +56,9 @@
     "Paramètres" : {
 
     },
+    "Période" : {
+
+    },
     "Série" : {
 
     },
@@ -53,6 +69,9 @@
 
     },
     "sur ton téléphone aujourd'hui" : {
+
+    },
+    "Temps" : {
 
     },
     "Temps restant" : {

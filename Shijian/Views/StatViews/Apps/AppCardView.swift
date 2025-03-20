@@ -10,13 +10,23 @@ import SwiftUI
 struct AppCardView: View {
     var app: AppInfo
     var times: [AppTime]
+    var period: TimePeriod
     
     @State private var isDetailViewPresented = false
     
     func formatTime(_ timeInterval: TimeInterval) -> String {
         let hours = Int(timeInterval / 3600)
         let minutes = Int((timeInterval.truncatingRemainder(dividingBy: 3600)) / 60)
-        return String(format: "%dh", hours, minutes)
+        
+        if minutes > 0 {
+            if hours > 0 {
+                return String(format: "%dh %02dm", hours, minutes)
+            } else {
+                return String(format: "%02dm", minutes)
+            }
+        } else {
+            return String(format: "%dh", hours)
+        }
     }
     
     
@@ -37,7 +47,7 @@ struct AppCardView: View {
                         Text("\(formatTime(TimeInterval(totalTimeSeconds)))")
                             .foregroundStyle(.black)
                             .font(.title3)
-                            .frame(width: 50)
+                            .frame(width: 100)
                         
                         
                         Text("\(app.name)")
@@ -55,7 +65,12 @@ struct AppCardView: View {
                 }
             }.padding(.horizontal)
         }.sheet(isPresented: $isDetailViewPresented) {
-            Text("hello!")
+            AppDetailsView(
+                app: app,
+                times: times,
+                period: period,
+                shouldOpenSheet: $isDetailViewPresented
+            )
         }
     }
 }
@@ -63,6 +78,7 @@ struct AppCardView: View {
 #Preview {
     AppCardView(
         app: AppInfo.testData.first!,
-        times: AppInfo.testData.first!.times
+        times: AppInfo.testData.first!.times,
+        period: .last12Months
     )
 }

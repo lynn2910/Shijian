@@ -18,7 +18,7 @@ struct AppInfo: Identifiable {
     
     static let dateFormatter: DateFormatter = {
         let fmt = DateFormatter()
-        fmt.dateFormat = "dd-MM-YYYY"
+        fmt.dateFormat = "DD-MM-YYYY"
         return fmt
     }()
     

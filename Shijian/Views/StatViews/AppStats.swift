@@ -15,6 +15,34 @@ struct AppStats: View {
         return String(format: "%dh %02dm", hours, minutes)
     }
     
+    func getTimesInPeriod(app: AppInfo) -> [AppTime] {
+        // TODO ne fonctionne pas??
+        switch (selectedPeriod) {
+            case .today:
+                let today = Calendar.current.startOfDay(for: Date())
+                return app.times
+                    .filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
+            case .last7Days:
+                let today = Date()
+                let sevenDaysAgo = Calendar.current.date(byAdding: .day, value: -7, to: today)!
+            
+                return app.times
+                    .filter { $0.date >= sevenDaysAgo && $0.date <= today }
+            case .lastMonth:
+                let today = Date()
+                let oneMonthAgo = Calendar.current.date(byAdding: .month, value: -1, to: today)!
+    
+                return app.times
+                    .filter { $0.date >= oneMonthAgo && $0.date <= today }
+            case .last12Months:
+                let today = Date()
+                let twelveMonthsAgo = Calendar.current.date(byAdding: .year, value: -1, to: today)!
+    
+                return app.times
+                    .filter { $0.date >= twelveMonthsAgo && $0.date <= today }
+        }
+    }
+    
     var body: some View {
         VStack {
             Spacer(minLength: 40)
@@ -52,8 +80,18 @@ struct AppStats: View {
             // Apps list
             ScrollView {
                 VStack {
-                    ForEach(AppInfo.testData) { app in
-                        AppCardView(app: app, times: app.times)
+                    let filteredApps = appsVM.apps.filter { !getTimesInPeriod(app: $0).isEmpty }
+                                        
+                    if filteredApps.isEmpty {
+                        Text("Aucune application utilisée dans cette période")
+                    } else {
+                        ForEach(filteredApps) { app in
+                            AppCardView(
+                                app: app,
+                                times: getTimesInPeriod(app: app),
+                                period: selectedPeriod
+                            )
+                        }
                     }
                 }
             }

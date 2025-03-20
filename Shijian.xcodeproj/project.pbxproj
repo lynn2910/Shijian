@@ -14,6 +14,7 @@
 		62DC5AD72D8C5B9F00C86391 /* AppCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC5AD62D8C5B9F00C86391 /* AppCategoryView.swift */; };
 		62DC5ADB2D8C5C8300C86391 /* CategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC5ADA2D8C5C8300C86391 /* CategorySheet.swift */; };
 		62DC5ADE2D8C5D1900C86391 /* AppCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC5ADD2D8C5D1900C86391 /* AppCardView.swift */; };
+		62DC5AE02D8C661200C86391 /* AppDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC5ADF2D8C661200C86391 /* AppDetailsView.swift */; };
 		62F719F92D646B1B0032F6B7 /* ShijianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F719F82D646B1B0032F6B7 /* ShijianApp.swift */; };
 		62F719FB2D646B1B0032F6B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F719FA2D646B1B0032F6B7 /* ContentView.swift */; };
 		62F719FD2D646B1D0032F6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62F719FC2D646B1D0032F6B7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		62DC5AD62D8C5B9F00C86391 /* AppCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCategoryView.swift; sourceTree = "<group>"; };
 		62DC5ADA2D8C5C8300C86391 /* CategorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheet.swift; sourceTree = "<group>"; };
 		62DC5ADD2D8C5D1900C86391 /* AppCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCardView.swift; sourceTree = "<group>"; };
+		62DC5ADF2D8C661200C86391 /* AppDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsView.swift; sourceTree = "<group>"; };
 		62F719F52D646B1B0032F6B7 /* Shijian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shijian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F719F82D646B1B0032F6B7 /* ShijianApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShijianApp.swift; sourceTree = "<group>"; };
 		62F719FA2D646B1B0032F6B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				62DC5ADD2D8C5D1900C86391 /* AppCardView.swift */,
+				62DC5ADF2D8C661200C86391 /* AppDetailsView.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				6222FBFE2D802BC300D5DBF3 /* AppTime.swift in Sources */,
 				6222FBFA2D802B7200D5DBF3 /* AppsViewModel.swift in Sources */,
 				62DC5AD72D8C5B9F00C86391 /* AppCategoryView.swift in Sources */,
+				62DC5AE02D8C661200C86391 /* AppDetailsView.swift in Sources */,
 				62F71A0B2D646D340032F6B7 /* BackgroundView.swift in Sources */,
 				62F71A1C2D647EE40032F6B7 /* SeriesStats.swift in Sources */,
 				62DC5ADB2D8C5C8300C86391 /* CategorySheet.swift in Sources */,

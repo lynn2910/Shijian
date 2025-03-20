@@ -4,15 +4,8 @@
     "" : {
 
     },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
+    "%@" : {
+
     },
     "+ 3h 21m" : {
 
@@ -29,16 +22,25 @@
     "Accueil" : {
 
     },
-    "Application" : {
+    "Applications" : {
+
+    },
+    "Blep" : {
 
     },
     "Calendrier des séries" : {
 
     },
-    "Date" : {
+    "Catégories" : {
 
     },
     "Done" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "hello!" : {
 
     },
     "jours de série" : {
@@ -69,9 +71,6 @@
 
     },
     "sur ton téléphone aujourd'hui" : {
-
-    },
-    "Temps" : {
 
     },
     "Temps restant" : {

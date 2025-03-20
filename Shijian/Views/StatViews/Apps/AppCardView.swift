@@ -1,16 +1,24 @@
 //
-//  AppStatsCard.swift
+//  AppCardView.swift
 //  Shijian
 //
-//  Created by colin cedric on 19/03/2025.
+//  Created by colin cedric on 20/03/2025.
 //
 
 import SwiftUI
 
-struct AppStatsCard: View {
+struct AppCardView: View {
     var app: AppInfo
+    var times: [AppTime]
     
     @State private var isDetailViewPresented = false
+    
+    func formatTime(_ timeInterval: TimeInterval) -> String {
+        let hours = Int(timeInterval / 3600)
+        let minutes = Int((timeInterval.truncatingRemainder(dividingBy: 3600)) / 60)
+        return String(format: "%dh", hours, minutes)
+    }
+    
     
     var body: some View {
         Button(action: {
@@ -24,7 +32,15 @@ struct AppStatsCard: View {
                 VStack(spacing: 4) {
                     // head
                     HStack {
-                        Text("- \(app.name)")
+                        let totalTimeSeconds = times.reduce(0) { $0 + $1.time }
+                        
+                        Text("\(formatTime(TimeInterval(totalTimeSeconds)))")
+                            .foregroundStyle(.black)
+                            .font(.title3)
+                            .frame(width: 50)
+                        
+                        
+                        Text("\(app.name)")
                             .font(.title3)
                             .foregroundStyle(.black)
                         
@@ -39,11 +55,14 @@ struct AppStatsCard: View {
                 }
             }.padding(.horizontal)
         }.sheet(isPresented: $isDetailViewPresented) {
-            AppCardView(app: app, times: app.times)
+            Text("hello!")
         }
     }
 }
 
 #Preview {
-    AppStatsCard(app: AppInfo.testData.first!)
+    AppCardView(
+        app: AppInfo.testData.first!,
+        times: AppInfo.testData.first!.times
+    )
 }

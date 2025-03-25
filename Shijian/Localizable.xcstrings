@@ -7,7 +7,16 @@
     "%@" : {
 
     },
+    "%@ h" : {
+
+    },
+    "%lld h" : {
+
+    },
     "+ 3h 21m" : {
+
+    },
+    "1 h et 30 min" : {
 
     },
     "5 h et 41 min" : {
@@ -43,13 +52,22 @@
     "Hello, World!" : {
 
     },
-    "hello!" : {
+    "Heure" : {
+
+    },
+    "Jour" : {
 
     },
     "jours de série" : {
 
     },
     "Loading..." : {
+
+    },
+    "Minuteur d'application" : {
+
+    },
+    "Mois" : {
 
     },
     "Options" : {
@@ -64,6 +82,9 @@
     "Période" : {
 
     },
+    "Période affichée: %@" : {
+
+    },
     "Série" : {
 
     },
@@ -74,6 +95,9 @@
 
     },
     "sur ton téléphone aujourd'hui" : {
+
+    },
+    "Temps" : {
 
     },
     "Temps restant" : {

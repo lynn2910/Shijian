@@ -32,6 +32,8 @@ struct AppDetailsView: View {
                 }
             }
             
+            Text("Période affichée: \(period.rawValue)")
+            
             // Graphique d'utilisation
             Chart(times) { time in
                 switch (period) {
@@ -67,15 +69,64 @@ struct AppDetailsView: View {
                             AxisValueLabel(format: .dateTime.day())
                         }
                     case .last12Months:
-                    AxisMarks(values: .stride(by: .month, count: 12)) { value in
+                        AxisMarks(values: .stride(by: .month, count: 12)) { value in
                             AxisValueLabel(format: .dateTime.month())
                         }
+                }
+            }
+            .chartYAxis {
+                AxisMarks(values: .automatic) { value in
+                    AxisGridLine()
+                    AxisTick()
+                    AxisValueLabel {
+                        if let value = value.as(Int.self) {
+                            Text("\(value) h")
+                        }
+                        else if let value = value.as(Double.self) {
+                            Text("\(String(format: "%.1f", value)) h")
+                        }
+                    }
                 }
             }
                 .padding()
                 .frame(height: 200)
             
             
+            Spacer(minLength: 10)
+            
+            // Settings
+            
+            Text("Paramètres")
+                .font(.title2)
+                .bold()
+                .multilineTextAlignment(.leading)
+            
+            HStack {
+                Image(systemName: "hourglass")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 25, height: 25)
+                
+                VStack(alignment: .leading) {
+                    Text("Minuteur d'application")
+                    
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("1 h et 30 min")
+                    }
+                }.padding(.horizontal)
+                
+                
+                Rectangle()
+                    .frame(width: 2, height: 30)
+                    .padding(.horizontal)
+                
+                Image(systemName: "trash.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 25, height: 25)
+            }
+            
+            Spacer()
             Spacer()
         }
     }
@@ -87,7 +138,7 @@ struct AppDetailsView: View {
     return AppDetailsView(
         app: AppInfo.testData.first!,
         times: AppInfo.testData.first!.times,
-        period: .last7Days,
+        period: .lastMonth,
         shouldOpenSheet: $shouldOpenSheet
     )
 }

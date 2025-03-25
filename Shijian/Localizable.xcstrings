@@ -16,9 +16,6 @@
     "+ 3h 21m" : {
 
     },
-    "1 h et 30 min" : {
-
-    },
     "5 h et 41 min" : {
 
     },
@@ -31,13 +28,16 @@
     "Accueil" : {
 
     },
+    "Annuler" : {
+
+    },
+    "Application" : {
+
+    },
     "Applications" : {
 
     },
     "Aucune application utilisée dans cette période" : {
-
-    },
-    "Blep" : {
 
     },
     "Calendrier des séries" : {
@@ -46,10 +46,10 @@
     "Catégories" : {
 
     },
-    "Done" : {
+    "Définir le nouveau temps" : {
 
     },
-    "Hello, World!" : {
+    "Done" : {
 
     },
     "Heure" : {
@@ -85,6 +85,12 @@
     "Période affichée: %@" : {
 
     },
+    "Please enter a time" : {
+
+    },
+    "Sélectionner le temps" : {
+
+    },
     "Série" : {
 
     },
@@ -98,6 +104,9 @@
 
     },
     "Temps" : {
+
+    },
+    "Temps d'utilisation" : {
 
     },
     "Temps restant" : {

@@ -16,7 +16,7 @@ struct AppCategoryView: View {
                 .background(.link)
                 .cornerRadius(3)
         }.sheet(isPresented: $shouldOpenSheet) {
-            Text("Blep")
+            CategorySheet(ctg: ctg, shouldOpenSheet: $shouldOpenSheet)
         }
     }
 }

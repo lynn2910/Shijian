@@ -55,6 +55,22 @@ struct AppInfo: Identifiable {
     ]
 }
 
+struct AppUsageData: Identifiable {
+    var id = UUID()
+    
+    var app: AppInfo
+    var totalTime: Int
+}
+
+extension AppInfo {
+    func toUsageData() -> AppUsageData {
+        AppUsageData(
+            app: self,
+            totalTime: self.times.reduce(0) { $0 + $1.time }
+        )
+    }
+}
+
 enum TimePeriod: String, CaseIterable, Identifiable {
     case today = "Aujourd'hui"
     case last7Days = "7 jours"

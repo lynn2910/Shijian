@@ -1,10 +1,3 @@
-//
-//  AppsViewModel.swift
-//  Shijian
-//
-//  Created by colin cedric on 11/03/2025.
-//
-
 import Foundation
 
 class AppsViewModel: ObservableObject {
@@ -22,5 +15,12 @@ class AppsViewModel: ObservableObject {
         self.apps.first(where: { a in
             a.name == name
         })
+    }
+    
+    func changeAppLimit(app_name: String, newTimeLimitation: Date?) {
+        var app = getAppByName(name: app_name)
+        if app == nil { return }
+        
+        app?.limiterTime = newTimeLimitation;
     }
 }

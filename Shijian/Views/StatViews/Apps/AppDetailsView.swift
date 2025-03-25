@@ -7,8 +7,36 @@ struct AppDetailsView: View {
     var period: TimePeriod
     
     @Binding var shouldOpenSheet: Bool
+    @State private var isTimeSelectionVisible = false
+    
+    @EnvironmentObject var appsVM: AppsViewModel
+    
+    var formattedSelectedTime: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        formatter.unitsStyle = .abbreviated
+
+        guard let limiterTime = app.limiterTime else {
+            return ""
+        }
+
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: limiterTime)
+
+        let now = Date()
+        let startOfDay = calendar.startOfDay(for: now)
+
+        if let dateWithTime = calendar.date(byAdding: components, to: startOfDay) {
+            let interval = dateWithTime.timeIntervalSince(startOfDay)
+            return formatter.string(from: interval) ?? ""
+        } else {
+            return ""
+        }
+    }
     
     var body: some View {
+        @State var selectedTime = app.limiterTime ?? Date.init(timeIntervalSince1970: 0);
+        
         VStack(alignment: .center) {
             // header
             HStack {
@@ -102,32 +130,68 @@ struct AppDetailsView: View {
                 .multilineTextAlignment(.leading)
             
             HStack {
-                Image(systemName: "hourglass")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 25, height: 25)
-                
-                VStack(alignment: .leading) {
-                    Text("Minuteur d'application")
-                    
-                    HStack(alignment: .firstTextBaseline) {
-                        Text("1 h et 30 min")
-                    }
-                }.padding(.horizontal)
+                Button {
+                    isTimeSelectionVisible.toggle()
+                } label: {
+                    HStack {
+                        Image(systemName: "hourglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 25, height: 25)
+
+                        VStack(alignment: .leading) {
+                            Text("Minuteur d'application")
+                            HStack(alignment: .firstTextBaseline) {
+                                Text(formattedSelectedTime)
+                            }
+                        }
+                    }.padding(.horizontal)
+                }.buttonStyle(PlainButtonStyle())
                 
                 
                 Rectangle()
                     .frame(width: 2, height: 30)
                     .padding(.horizontal)
                 
-                Image(systemName: "trash.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 25, height: 25)
+                
+                Button {
+                    appsVM.changeAppLimit(app_name: app.name, newTimeLimitation: selectedTime)
+                } label: {
+                    Image(systemName: "trash.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.black)
+                }
             }
             
             Spacer()
             Spacer()
+        }
+        .sheet(isPresented: $isTimeSelectionVisible) {
+            NavigationView {
+                VStack {
+                    DatePicker("Please enter a time", selection: $selectedTime, displayedComponents: .hourAndMinute).padding()
+                    
+                    Spacer(minLength: 10)
+                    Button {
+                        appsVM.changeAppLimit(app_name: app.name, newTimeLimitation: selectedTime)
+                        isTimeSelectionVisible.toggle()
+                    } label: {
+                        Text("Définir le nouveau temps")
+                    }
+                    
+                    Spacer()
+                }
+                .navigationTitle("Sélectionner le temps")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Annuler") {
+                            isTimeSelectionVisible.toggle()
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -138,7 +202,7 @@ struct AppDetailsView: View {
     return AppDetailsView(
         app: AppInfo.testData.first!,
         times: AppInfo.testData.first!.times,
-        period: .lastMonth,
+        period: .last12Months,
         shouldOpenSheet: $shouldOpenSheet
-    )
+    ).environmentObject(AppsViewModel())
 }

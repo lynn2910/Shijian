@@ -15,6 +15,7 @@ struct AppInfo: Identifiable {
     var name: String
     var category: AppCategory = .unknown
     var times: [AppTime]
+    var limiterTime: Date?
     
     static let dateFormatter: DateFormatter = {
         let fmt = DateFormatter()
@@ -32,7 +33,8 @@ struct AppInfo: Identifiable {
                 AppTime(date: dateFormatter.date(from: "03-01-2025").unsafelyUnwrapped, time: 27900),
                 AppTime(date: dateFormatter.date(from: "18-03-2025").unsafelyUnwrapped, time: 3000),
                 AppTime(date: Date(), time: 2880)
-            ]
+            ],
+            limiterTime: Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: Date())!
         ),
         AppInfo(
             name: "Crumble",
@@ -41,12 +43,14 @@ struct AppInfo: Identifiable {
                 AppTime(date: dateFormatter.date(from: "07-01-2025").unsafelyUnwrapped, time: 1860),
                 AppTime(date: dateFormatter.date(from: "09-01-2025").unsafelyUnwrapped, time: 4560),
                 AppTime(date: Date(), time: 3540),
-            ]
+            ],
+            limiterTime: nil
         ),
         AppInfo(
             name: "Discord",
             category: .social,
-            times: []
+            times: [],
+            limiterTime: Calendar.current.date(bySettingHour: 3, minute: 0, second: 0, of: Date())!
         )
     ]
 }

@@ -8,6 +8,11 @@ enum AppCategory: String, CaseIterable, Identifiable {
     case unknown = "Inconnu"
     
     var id: Self { self }
+    
+    static var testData: [AppCategory: Date] = [
+        .social: Calendar.current.date(bySettingHour: 7, minute: 0, second: 0, of: Date())!
+
+    ]
 }
 
 struct AppInfo: Identifiable {
@@ -49,7 +54,9 @@ struct AppInfo: Identifiable {
         AppInfo(
             name: "Discord",
             category: .social,
-            times: [],
+            times: [
+                AppTime(date: dateFormatter.date(from: "18-03-2025").unsafelyUnwrapped, time: 4653)
+            ],
             limiterTime: Calendar.current.date(bySettingHour: 3, minute: 0, second: 0, of: Date())!
         )
     ]

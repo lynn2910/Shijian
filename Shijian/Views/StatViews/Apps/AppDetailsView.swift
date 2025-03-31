@@ -28,6 +28,7 @@ struct AppDetailsView: View {
 
         if let dateWithTime = calendar.date(byAdding: components, to: startOfDay) {
             let interval = dateWithTime.timeIntervalSince(startOfDay)
+            if interval <= 3600 { return "0h" }
             return formatter.string(from: interval) ?? ""
         } else {
             return ""
@@ -155,7 +156,8 @@ struct AppDetailsView: View {
                 
                 
                 Button {
-                    appsVM.changeAppLimit(app_name: app.name, newTimeLimitation: selectedTime)
+                    appsVM.changeAppLimit(app_name: app.name, newTimeLimitation: Date.init(timeIntervalSince1970: 0))
+                    selectedTime = Date.init(timeIntervalSince1970: 0)
                 } label: {
                     Image(systemName: "trash.fill")
                         .resizable()
